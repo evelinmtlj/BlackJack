@@ -62,5 +62,8 @@ public class Card {
         this.isFaceUp = false; //face down
     }
 
-
+    @Override
+    public String toString() {
+        return  value + " of " + suit;
+    }
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Hand {
 
-    private ArrayList<Card> cards;
+    private ArrayList<Card> cards = new ArrayList<>();
 
     //constructor
     public Hand (){
@@ -58,4 +58,8 @@ public class Hand {
         return getValue() > 21;
     }
 
+    @Override
+    public String toString() {
+        return cards.toString() + "(Value: " + getValue() + ")";
+    }
 }
