@@ -25,7 +25,7 @@ public class Card {
 
     }
 
-    public int getPointValue(){
+    public int getPointValue(){ //to define how much each card is worth
         if (isFaceUp) {
             switch (value) {
                 case "A":
@@ -37,7 +37,7 @@ public class Card {
                 default:
 
                     try {
-                        return Integer.parseInt(value);
+                        return Integer.parseInt(value); //changing from string to #
                     } catch (NumberFormatException e) {
                         return 0;
                             }

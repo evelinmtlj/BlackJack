@@ -11,7 +11,7 @@ public class Hand {
         cards = new ArrayList<>();
     }
 
-    //a card is dealt to the hand
+    //add card to hand
     public void deal(Card card) {
         cards.add(card);
     }
@@ -20,6 +20,8 @@ public class Hand {
         return cards.size();
     }
     //calculate total blackjack value of the hand
+
+    // calculate total
     public int getValue(){
         int totalValue = 0;
         int aceCount = 0;
@@ -27,7 +29,7 @@ public class Hand {
         for(Card card: cards) {
             //flip to check value
             boolean wasFaceUp = card.isFaceUp();
-            if (!wasFaceUp) card.flip();
+            if (!wasFaceUp) card.flip(); //flip to read value
 
             int cardValue = card.getPointValue();
             totalValue += cardValue;
@@ -36,7 +38,7 @@ public class Hand {
                 aceCount++; //count how many aces
             }
             if (!wasFaceUp) card.flip();
-        }
+        } //handle the ace card
         while(totalValue >21 && aceCount > 0) {
             totalValue -= 10; //treat one ace as 1 instead of 11
             aceCount--;
